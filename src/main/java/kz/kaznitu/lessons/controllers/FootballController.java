@@ -56,7 +56,7 @@ public class FootballController {
     }
 
     @RequestMapping(value="/main", method = RequestMethod.GET)
-    public String footballsList4(Model model) {
+    public String footballsList5(Model model) {
         model.addAttribute("footballs", footballRepas.findAll());
         return "footballs";
     }
