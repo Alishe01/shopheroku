@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title style="color:#28a745; size:24px; align-content:center; position:absolute;">Football</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+    <style>
+        .btn-default{color:#28a745;}
+        body{
+            background: #a7b1f9;
+        }
+        footer{
+            position: absolute;
+            background:#a7b1f9;
+            color: #343a40;
+            width: 10%;
+            font-style:italic;
+            text-align:right;
+
+        }
+        .form-control{
+            color: #5f5d7d;
+            font: message-box;
+        }
+        .col-lg-2{
+            font-size:24px;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                <h1>Football</h1>
+
+                <form class="form-horizontal" th:action="@{/football/{id}/clubs(id=${football.id})}"
+                      method="post" enctype="multipart/form-data" >
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Name</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" disabled = "disabled"
+                                       th:value="${football.firstName + ' ' + football.lastName}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" disabled="disabled"
+                                       th:value="${football.email}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Club</label>
+                            <div class="col-lg-10">
+                                <div th:each="club : ${football.clubs}">
+                                    <span th:text="${club.label}" /> - <span th:text="${club.description}"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-6  col-lg-offset-2">
+                                <div class="input-group">
+                                    <select name="clubId" class="form-control">
+                                        <option th:each="club : ${clubs}"
+                                                th:value="${club.id}"
+                                                th:text="${club.description}">Club</option>
+                                    </select>
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-default">Add a Club</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy;ABS 2018 Football
+</footer>
+
+</body>
+</html>

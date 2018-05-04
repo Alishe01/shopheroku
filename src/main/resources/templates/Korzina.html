@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Footballs database</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+    <style>
+        body{
+            background: #686868;
+        }
+        head{
+            height:250px;
+            width:1500px;
+        // background-image: url(/4.jpg);
+            background-size: 100%;
+            border-radius: 20px;}
+        footer{
+            position: absolute;
+            background:red;
+            color: black;
+            width: 10%;
+            font-style:italic;
+            text-align:right;
+        }
+    </style>
+</head>
+<body>
+<div class="head" style="margin-left: 20px;">
+    <img src="images/1.png" style="margin-left: 300px">
+</div>
+<div class="container">
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                <h1>Ваш заказ</h1>
+                <div class="korzina">
+                    <form th:action="@{/main}" method="get" enctype="multipart/form-data">
+                        <button class="btn btn-primary" style="margin-left: 675px;">Назад</button>
+                    </form>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Название</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="football : ${footballs}">
+                        <td th:text="${football.firstName +'  Калория: ' + football.email + 'год.   Цена: '+ football.lastName + ' тг.' }"></td>
+                        <td>
+                        </td>
+                        <td> <a th:href = "@{'/delete?id='+${football.id}}">delete</a> </td>&#9731;
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

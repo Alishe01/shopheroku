@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Club</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+
+    <style>
+        #h1{color: skyblue;size: 24px;}
+        body{background: #686868;}
+        /*footer{ position: absolute; background:#a7b1f9; color: #343a40; width: 10%; font-style:italic; text-align:right;}*/
+
+        .container{position: absolute; left: 0px; margin-top: 30px; width: 300px;}
+    </style>
+</head>
+
+
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="form-group">
+            <h1 id="h1">Регистрация</h1>
+            <form action="#" th:action="@{/clubs/}" th:object="${club}" method="POST">
+                <label th:for="label">Номер телефона или логин</label>
+                <input th:field="*{label}" class="form-control"/>
+                <span th:errors="*{label}" class="text-danger"></span>
+                Пароль<label th:for="description"></label>
+                <input type="password" th:field="*{description}" class="form-control"/>
+                <span th:errors="*{description}" class="text-danger"></span>
+                Повторите пароль<label th:for="description2"></label>
+                <input type="password" th:field="*{description}" class="form-control"/>
+                <span th:errors="*{description}" class="text-danger"></span>
+                Email        <label th:for="email"></label>
+                <input th:field="*{email}" class="form-control"/>
+                <span th:errors="*{email}" class="text-danger"></span>
+
+                <br/>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+<footer>
+
+</footer>
+
+</body>
+</html>

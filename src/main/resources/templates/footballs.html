@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Database</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+    <style>
+        body{
+            background: #686868;
+        }
+        .head{
+            height:250px;
+            width:1250px;
+            background-size: 100%;
+            border-radius: 20px;}
+        footer{
+            position: absolute;
+            background:#a7b1f9;
+            color: #343a40;
+            width: 10%;
+            font-style:italic;
+            text-align:right;
+        }
+        .Burger{
+            height: 350px;
+            width: 200px;
+            float: left;
+            margin-top: 30px;
+            margin-left: 70px;
+            margin-bottom: 50px;
+            background-color: #5a6268;
+            border-radius: 20px;
+            font-family: Times New Roman;
+            color: skyblue;
+            font-weight:bold;
+        }
+
+        .Burger img{
+            height: 210px;
+            width: 180px;
+            margin-top: 20px;
+            margin-left: 10px;
+
+        }
+        .korzina {
+            width: 100%;
+            margin-left: 1220px;
+        }
+    </style>
+</head>
+<body>
+<div class="head" style="margin-left: 20px; ">
+    <div>
+    <img src="images/1.png" style="margin-left: 300px">
+        <form th:action="@{/clubs}" method="get" enctype="multipart/form-data">
+            <div style="margin-left: 1230px;">
+                <button class="btn btn-primary">Log in</button>
+            </div>
+        </form>
+    </div>
+        <div class="korzina">
+    <form th:action="@{/Korzina}" method="get" enctype="multipart/form-data">
+        <button class="btn btn-primary" style="margin-top: 15px;">Корзина</button>
+    </form>
+    </div>
+</div>
+<div class="container" >
+    <div class="page-header" id="banner">
+
+        <div class="Burger">
+            <div>
+                <form th:action="@{/footballs}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <fieldset>
+                        <div >
+                        <img src="images/3.jpg" style="width: 140px; height:160px; margin-left: 30px; ">
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <label style="float: left;">Гордость и предубеждение</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="firstName"  value="Гордость и предубеждение"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label style="float: left;">5790 тг</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="lastName" value="5790"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <br><br>
+                            <label style="float: left;">1998 год</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="email"  value="1998"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div style="float: right;">
+                                <button type="submit" class="btn btn-primary" name="button">Заказать</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="Burger" >
+            <div>
+                <form th:action="@{/footballs}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <fieldset>
+                        <div >
+                            <img src="images/5.jpg" style="width: 140px; height:160px; margin-left: 30px; ">
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <label style="float: left;">Атлант расправил плечи</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="firstName"  value="Атлант расправил плечи"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label style="float: left;">6990 тг</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="lastName" value="6990" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <br><br>
+                            <label style="float: left;">2000 год</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="email"  value="2000"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div style="float: right;">
+                                <button type="submit" class="btn btn-primary" name="button">Заказать</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+
+
+            </div>
+        </div>
+        <div class="Burger">
+            <div>
+                <form th:action="@{/footballs}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <fieldset>
+                        <div >
+                            <img src="images/6.jpg" style="width: 140px; height:160px; margin-left: 30px; ">
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <label style="float: left;">Шантарам</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="firstName"  value="Шантарам"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label style="float: left;">1750 тг</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="lastName" value="1750" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <br><br>
+                            <label style="float: left;">2000 год</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="email"  value="2000"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div style="float: right;">
+                                <button type="submit" class="btn btn-primary" name="button">Заказать</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="Burger">
+            <div>
+                <form th:action="@{/footballs}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <fieldset>
+                        <div >
+                            <img src="images/7.jpg" style="width: 140px; height:160px; margin-left: 30px; ">
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <label style="float: left;">Один из нас лжет</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="firstName"  value="Один из нас лжет"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label style="float: left;">1500 тг</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="lastName" value="1500"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <br><br>
+                            <label style="float: left;">2008 год</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="email"  value="2008"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div style="float: right;">
+                                <button type="submit" class="btn btn-primary" name="button">Заказать</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="Burger">
+            <div>
+                <form th:action="@{/footballs}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <fieldset>
+                        <div >
+                            <img src="images/8.jpg" style="width: 140px; height:160px; margin-left: 30px; ">
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <label style="float: left;">Гордость и предубеждение</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="firstName"  value="Гордость и предубеждение"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label style="float: left;">3500 тг</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="lastName" value="3500" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <br><br>
+                            <label style="float: left;">2005 год</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="email"  value="2005"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div style="float: right;">
+                                <button type="submit" class="btn btn-primary" name="button">Заказать</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="Burger">
+            <div>
+                <form th:action="@{/footballs}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <fieldset>
+                        <div >
+                            <img src="images/9.jpg" style="width: 140px; height:160px; margin-left: 30px; ">
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <label style="float: left;">Ловушка для счастия</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="firstName"  value="Ловушка для счастия"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label style="float: left;">5000 тг</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="lastName" value="5000"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <br><br>
+                            <label style="float: left;">2004 год</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="email"  value="2004"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div style="float: right;">
+                                <button type="submit" class="btn btn-primary" name="button">Заказать</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="Burger">
+            <div>
+                <form th:action="@{/footballs}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <fieldset>
+                        <div >
+                            <img src="images/10.jpg" style="width: 140px; height:160px; margin-left: 30px; ">
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <label style="float: left;">365 советов</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="firstName" value="365 советов"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label style="float: left;">2100 тг</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="lastName" value="2100" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <br><br>
+                            <label style="float: left;">2007 год</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="email"  value="2007"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div style="float: right;">
+                                <button type="submit" class="btn btn-primary" name="button">Заказать</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="Burger">
+            <div>
+                <form th:action="@{/footballs}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <fieldset>
+                        <div >
+                            <img src="images/11.jpg" style="width: 140px; height:160px; margin-left: 30px; ">
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <label style="float: left;">Самая важная книга</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="firstName" value="Самая важная книга"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label style="float: left;">3000 тг</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="lastName" value="3000" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <br><br>
+                            <label style="float: left;">2003 год</label>
+                            <div class="col-lg-9">
+                                <input type="hidden" class="form-control" name="email"  value="2003"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div style="float: right;">
+                                <button type="submit" class="btn btn-primary" name="button">Заказать</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
